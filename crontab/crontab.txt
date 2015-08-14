@@ -1,0 +1,14 @@
+# hawkeye monitor
+# author:leotse
+
+# run server
+* * * * * bash /home/xiefeng/code/ht_hawkeye/webservice.sh >/dev/null 2>/dev/null &
+
+# web server monitor hourly(from 7 to 22 )
+0 7-23/1 * * * bash /home/xiefeng/code/ht_hawkeye/monitor/web_server_monitor.sh >/dev/null 2>/dev/null &
+
+# service monitor
+* * * * * bash /home/xiefeng/code/ht_hawkeye/monitor/service_monitor.sh >/dev/null 2>/dev/null &
+
+# notification
+* * * * * bash /home/xiefeng/code/ht_hawkeye/monitor/notification.sh >/dev/null 2>/dev/null &
