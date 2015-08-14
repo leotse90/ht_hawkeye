@@ -69,7 +69,6 @@ def check_server_status():
                 send_wechat_sms(app_key, "Server Alert", AlertPriority.CRITICAL, alert_sms)
 
 def get_developer_contacts(alert_developers, type):
-    alert_contacts = []
     alert_items = DeveloperInfo.objects.filter(developer__in=alert_developers)
     if type == AlertStrategy.WECHAT:
         return [item.app_key for item in alert_items]
