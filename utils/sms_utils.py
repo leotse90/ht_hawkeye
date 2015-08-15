@@ -25,7 +25,7 @@ def send_sms(telephones, sms):
 # send wechat message by 110monitor
 # website: www.110monitor.com
 # one alert for one person once
-def send_wechat_sms(app_key, alert_name, priority, alarmContent):
+def send_wechat_sms(app_key, alert_name, priority, alarm_content):
     '''
     url: "http://api.110monitor.com/alert/api/event"
     method: POST
@@ -47,7 +47,7 @@ def send_wechat_sms(app_key, alert_name, priority, alarmContent):
     post_data["entityName"] = ""
     post_data["entityId"] = ""
     post_data["priority"] = priority
-    post_data["alarmContent"] = alarmContent
+    post_data["alarmContent"] = alarm_content
 
     url = "http://api.110monitor.com/alert/api/event"
     req = urllib2.Request(url=url, data=json.dumps(post_data))
